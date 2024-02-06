@@ -9,7 +9,7 @@ JSON. And you won't have to parse back the encoded strings into your custom type
 
 ```bash
 pip install jsonplus
-````
+```
 
 ## How to start using it?
 
@@ -41,8 +41,8 @@ employee = Employee(
 ```
 
 The standard `json` module can't serialize the `employee` instance, requiring you to call its `dict` method.
-This will not sufice, because the standard `json` module don't know how to encode `Decimal`, `date` and `set`.
-Your solution would include some trasnfomation of the `employee` instance and its attributes before encoding it to JSON.
+This will not suffice because the standard `json` module doesn't know how to encode `Decimal`, `date` and `set`.
+Your solution would include some transformation of the `employee` instance and its attributes before encoding it to JSON.
 
 That is where `jsonplus` shines by providing default encoder for common types like `pydantic.BaseModel`,
 `decimal.Decimal`, `datetime.date` and `set`. And allowing you to easily add your own encoders.
@@ -159,7 +159,6 @@ When registering a typed encoder, you simply pass the encoder and the type to th
 When you add a typed encoder, `jsonplus` will check if any base class already has a registered encoder make sure the
 more generic encoder is used last, respecting Python's Method Resolution Order (MRO).
 
-
 ### How to add a functional encoder?
 
 *Functional encoders* are used to encode an object based on arbitraty logic and not specific to a type.
@@ -168,20 +167,22 @@ To register a functional encoder, you simply pass the encoder to the chosen regi
 
 All functional encoders are called only for objects that do not have a registered typed encoder.
 
-
 ## Contributing
+
 Pull requests are welcome and must have associated tests.
 
 For major changes, please open an issue first to discuss what you would like to change.
 
-
 ## License
+
 [MIT](https://choosealicense.com/licenses/mit/)
 
 ## Author
+
 Henrique Bastos <henrique@bastos.net>
 
 ## Project links
+
 - [Homepage](https://github.com/henriquebastos/python-jsonplus)
 - [Repository](https://github.com/henriquebastos/python-jsonplus)
 - [Documentation](https://github.com/henriquebastos/python-jsonplus)
